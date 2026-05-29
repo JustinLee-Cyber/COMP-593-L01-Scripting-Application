@@ -1,4 +1,4 @@
-
+#Scripting Applications - Lab 2 - Justin Lee - 10052040
 
 def calculate_average(grades): #creating a function to get the average grades that is being provided
 
@@ -66,6 +66,58 @@ def passingGrades2(Students, Grades):
     #return to main
     return 
 
+#Part 3: File Reading and Writing - created a function
+def WriteTheReport(Students, Grades):
+    #Make a variable to open and save details of the report
+    report_file = open("report.txt", "w")
+
+    #Write stuff in the report - this is the title
+    report_file.write("Student Grades Report\n")
+    report_file.write("-----------------\n")
+
+    # making a for loop to get the index so we can call each one on any list[] index for students and grades
+    # This allow us to write each student name and grades into the repot file
+    for i in range(len(Students)):
+        report_file.write(Students[i] + " : " + str(Grades[i]) + "\n")
+
+    #close the file - very important when opening the file
+    report_file.close()
+
+    #Print that the report was successfully
+    print("\nReport file created successfully.")
+
+    #Return to the main 
+    return
+
+#Read the student report and grades + Error handling Part 4
+def ReadTheReport():
+
+    #Try to see if the code below works, if not there is an error
+    try:
+        #input - getting the user input information for this case file name
+        file_name = input("Enter filename to read: ")
+
+        #Create a variable to hold onto the report by calling it and saving details
+        report_file = open(file_name, "r")
+
+        #Read the variable
+        content = report_file.read()
+
+        #print the content in the variable
+        print("\nReading Report File:")
+        print(content)
+
+        #close to file, always do this
+        report_file.close();
+
+    except FileNotFoundError:
+        print("Error: File not found.")
+
+    except Exception as e:
+        print("Unexpected error:", e)
+    #always return to main
+    return  
+
 def main(): #main function 
 
     #Creating a list for name of Students and their Grades - A list can be adjusted or changed
@@ -95,7 +147,13 @@ def main(): #main function
     #print("Test function of passingGrades2")
     passingGrades2(students, grades)
 
+    #Function to write the report
+    WriteTheReport(students,grades)
+
+    #Function to read the report that was created
+    ReadTheReport()
     return
 
+# Created when creating the main
 if __name__ == '__main__': #very important when doing the main
     main()
