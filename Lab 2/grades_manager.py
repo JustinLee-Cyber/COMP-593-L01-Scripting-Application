@@ -157,3 +157,15 @@ def main(): #main function
 # Created when creating the main
 if __name__ == '__main__': #very important when doing the main
     main()
+
+#Discussion Questions:
+#Questions 1: Why are tuples considered more secure than list in some situations?
+#Answer: This allow us to keep it static so there will be no changes that can occur or affect the list
+#used in tuples. In list, it can expend or decrease and change or add which can cause a lot of problems.
+#
+#Question 2: Why is error handling important in security scripting?
+#Answer: It is important as it allow us to catch whatever is coming by and see if what is coming by is correct
+#if not, we can catch it before it keeps going and show an error is occuring.
+#This also allow us to check everything that is coming by and make sure whatever is being called is correct.
+#Mainly this is useful in catching before information is leaked, make sure cache is good, ensure system is running
+#smoothly and can be useful to check what inforamtion is coming by.
