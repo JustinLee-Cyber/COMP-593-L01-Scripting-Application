@@ -5,6 +5,7 @@ Program: CSI
 Current Term: Spring/Summer Term - 2
 
 Current labs done:
+
 Lab 2
 
 Lab 3
