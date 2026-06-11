@@ -1,0 +1,31 @@
+﻿WORKSHOP ID,ATTENDEE ID,TRACK,SHORT,SESSION NAME,TICKETS,PRICE PER TICKET,ATTENDEE NAME,Level
+501,1,Cybersecurity,C,Pentesting 101,2,150,Alice Chen,1
+501,2,Cybersecurity,C,Network Defense,1,200,Alice Chen,1
+501,3,Cybersecurity,C,Cloud Security,1,175,Alice Chen,1
+501,4,Cybersecurity,C,Threat Hunting,3,120,Bob Smith,1
+501,5,Cybersecurity,C,Incident Response,2,180,Bob Smith,1
+501,6,Cybersecurity,C,Digital Forensics,1,250,Bob Smith,4
+501,7,Cybersecurity,C,Malware Analysis,4,95,Carol Day,4
+501,8,Cybersecurity,C,SIEM Management,1,210,Carol Day,4
+501,9,Cybersecurity,C,Zero Trust,2,165,Carol Day,4
+501,10,Cybersecurity,C,Cryptography,3,130,Carol Day,4
+502,1,Data Science,D,Python for Data,2,140,Dave Lee,4
+502,2,Data Science,D,Machine Learning,1,300,Dave Lee,4
+502,3,Data Science,D,Neural Networks,1,350,Dave Lee,3
+502,4,Data Science,D,SQL Analytics,5,80,Eve Grant,3
+502,5,Data Science,D,Power BI Visuals,2,110,Eve Grant,3
+502,6,Data Science,D,R Programming,1,145,Eve Grant,3
+502,7,Data Science,D,Big Data Ops,3,220,Frank Ho,3
+502,8,Data Science,D,NLP Essentials,1,190,Frank Ho,2
+502,9,Data Science,D,Data Ethics,2,100,Frank Ho,2
+502,10,Data Science,D,Tableau Mastery,4,125,Frank Ho,2
+503,1,Cloud Ops,CO,Docker Basics,1,155,Grace Kim,2
+503,2,Cloud Ops,CO,Kubernetes Admin,2,240,Grace Kim,2
+503,3,Cloud Ops,CO,AWS Solutions,1,280,Grace Kim,2
+503,4,Cloud Ops,CO,Azure Architect,5,115,Hank Lin,2
+503,5,Cloud Ops,CO,GCP Fundamentals,2,135,Hank Lin,5
+503,6,Cloud Ops,CO,Terraform IaC,1,215,Hank Lin,5
+503,7,Cloud Ops,CO,Serverless Apps,3,160,Ivy Rose,5
+503,8,Cloud Ops,CO,GitOps Workflows,1,185,Ivy Rose,5
+503,9,Cloud Ops,CO,Monitoring/Logs,2,140,Ivy Rose,5
+503,10,Cloud Ops,CO,Cloud Migration,4,205,Ivy Rose,5
