@@ -62,22 +62,28 @@ def formating(data_file_path, order_date_df):
 def exportfile(df, workshops_path):
 
   #REQ-9 - The grand sum of the total cost 
-    for order_date,  order_date_df in df.groupby('ORDER DATE'):
-        #print(order_date)
-        #print(order_date_df)
-        total_cost_sum = order_date_df['TOTAL PRICE'].sum()
+    for order_ID,  order_ID_df in df.groupby('ORDER ID'):
+
+        #Functions to remove, sort and insert data
+        removedata(order_ID_df)
+        sortdata(order_ID_df, 'ITEM NUMBER')
+        insertdata(order_ID_df)
+
+        total_cost_sum = order_ID_df['TOTAL PRICE'].sum()
         #print(total_cost_data)
         total_cost_df = pd.DataFrame({'ITEM PRICE':'GRAND TOTAL', 'TOTAL PRICE':[total_cost_sum]})
         #print(total_cost_df)
-        order_date_df = pd.concat([order_date_df, total_cost_df])
+        order_ID_df = pd.concat([order_ID_df, total_cost_df])
         #print(order_date_df)
 
+        order_date = order_ID_df['ORDER DATE'].iloc[0]
         fix_date = str(order_date).replace('/', '-')
+        #print(fix_date)
         file_name = f'Orders_{fix_date}.xlsx' # 
         data_file_path = os.path.join(workshops_path,file_name)
         #print(data_file_path)
 
-        formating(data_file_path, order_date_df)
+        formating(data_file_path, order_ID_df)
 
     return
 
@@ -85,9 +91,6 @@ def process_order_data(data_csv, workshops_path):
     #Import order data csv that was inserted from command line
     df = pd.read_csv(data_csv)
 
-    removedata(df)
-    sortdata(df, 'ITEM NUMBER')
-    insertdata(df)
     exportfile(df,workshops_path)
 
     return
