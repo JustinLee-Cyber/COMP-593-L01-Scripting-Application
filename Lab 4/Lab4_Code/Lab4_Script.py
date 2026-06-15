@@ -42,7 +42,7 @@ def process_order_data(data_csv, workshops_path):
         #print(order_date_df)
 
         fix_date = str(order_date).replace('/', '-')
-        file_name = f'ORDER_{fix_date}.xlsx' # 
+        file_name = f'Orders_{fix_date}.xlsx' # 
         data_file_path = os.path.join(workshops_path,file_name)
         #print(data_file_path)
     #REQ-10 - format time, adjust all price information as money, $, comma-spearated thousands, and two decimal places
