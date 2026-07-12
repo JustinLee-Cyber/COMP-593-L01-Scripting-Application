@@ -45,13 +45,12 @@ def get_pokemon_info(pokemon_name):
     #Check if the request is successful 
 
     if request_pok.status_code == requests.codes.ok:
-        print('Successful')
+        print('successful')
         #return information
         return request_pok.json()
     else:
         print('Unsuccessful')
-        print(f'Respond code: {request_pok.status_code}')
-        print(f'Reason: {request_pok.reason}')
+        print(f'Respond code: {request_pok.status_code} ({request_pok.reason})')
 
     # TODO: If the GET request failed, print the error reason and return None
 
