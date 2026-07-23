@@ -1,4 +1,6 @@
 """
+Name: Justin Lee
+
 Description:
  Creates the people table in the Social Network database
  and populates it with 200 fake people.

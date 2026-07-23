@@ -1,4 +1,6 @@
 """
+Name: Justin Lee
+
 Description:
  Prints the name and age of all people in the Social Network database
  who are age 50 or older, and saves the information to a CSV file.
