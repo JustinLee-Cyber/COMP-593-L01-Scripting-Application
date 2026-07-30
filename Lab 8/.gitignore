@@ -1,0 +1,8 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Ignore all csv files
+*.csv
+
+# Ignore all DB files
+*.db
