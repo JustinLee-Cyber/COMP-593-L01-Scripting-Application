@@ -6,6 +6,5 @@ Current Term: Spring/Summer Term - 2
 
 Current labs done:
 
-Lab 2
+Lab 2, 3, 4, 5, 6, 7, 8
 
-Lab 3
