@@ -8,6 +8,7 @@ Usage:
 """
 
 from tkinter import Tk, ttk
+from tkinter import messagebox
 
 from poke_api import get_pokemon_info
 
@@ -43,14 +44,23 @@ def get_info():
         height_val["text"] = poke_info["height"]
         weight_val["text"] = poke_info["weight"]
         # update types_val
+        types = []
+        for _ in poke_info["types"]:
+            types.append(_["type"]["name"].title())
+        type_val["text"] = ", ".join(types)
 
         hp_bar["value"] = poke_info["stats"][0]["base_stat"]
         att_bar["value"] = poke_info["stats"][1]["base_stat"]
         def_bar["value"] = poke_info["stats"][2]["base_stat"]
         spc_att_bar["value"] = poke_info["stats"][3]["base_stat"]
+        spc_def_bar["value"] = poke_info["stats"][4]["base_stat"]
+        speed_bar["value"] = poke_info["stats"][5]["base_stat"]
 
     else:
         # show error box
+        messagebox.showerror(message=f"Unable to fetch information for {input_ent.get().strip()} from the PokeAPI.", title="Error")
+
+
         pass
 
     return
@@ -79,11 +89,15 @@ hp_lbl = ttk.Label(stats, text="HP:")
 att_lbl = ttk.Label(stats, text="Attack:")
 def_lbl = ttk.Label(stats, text="Defense:")
 spc_att_lbl = ttk.Label(stats, text="Special Attack:")
+spc_def_lbl = ttk.Label(stats, text="Special Defence:")
+speed_lal = ttk.Label(stats, text="Speed:")
 
 hp_lbl.grid(row=0, column=0, sticky="E", padx=(10, 5), pady=(10, 5))
 att_lbl.grid(row=1, column=0, sticky="E", padx=(10, 5), pady=5)
 def_lbl.grid(row=2, column=0, sticky="E", padx=(10, 5), pady=(5, 10))
-spc_att_lbl.grid(row=3, column=0, sticky="E", padx=(10,5), pady=(5,10))
+spc_att_lbl.grid(row=3, column=0, sticky="E", padx=(10, 5), pady=(5, 10))
+spc_def_lbl.grid(row=4, column=0, sticky="E", padx=(10, 5), pady=(5, 10))
+speed_lal.grid(row=5, column=0, sticky="E", padx=(10, 5), pady=(5, 10))
 
 MAX_STAT = 255
 BAR_LENGTH = 200
@@ -91,11 +105,15 @@ hp_bar = ttk.Progressbar(stats, maximum=MAX_STAT, length=BAR_LENGTH)
 att_bar = ttk.Progressbar(stats, maximum=MAX_STAT, length=BAR_LENGTH)
 def_bar = ttk.Progressbar(stats, maximum=MAX_STAT, length=BAR_LENGTH)
 spc_att_bar = ttk.Progressbar(stats, maximum=MAX_STAT, length=BAR_LENGTH)
+spc_def_bar = ttk.Progressbar(stats, maximum=MAX_STAT, length=BAR_LENGTH)
+speed_bar = ttk.Progressbar(stats, maximum=MAX_STAT, length=BAR_LENGTH)
 
 hp_bar.grid(row=0, column=1, padx=(5, 10), pady=(10, 5))
 att_bar.grid(row=1, column=1, padx=(5, 10), pady=5)
 def_bar.grid(row=2, column=1, padx=(5, 10), pady=(5, 10))
 spc_att_bar.grid(row=3, column=1, padx=(5, 10), pady=(5, 10))
+spc_def_bar.grid(row=4, column=1, padx=(5, 10), pady=(5, 10))
+speed_bar.grid(row=5, column=1, padx=(5, 10), pady=(5, 10))
 
 # Create window
 root.mainloop()
