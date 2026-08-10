@@ -41,8 +41,8 @@ def get_info():
 
     poke_info = get_pokemon_info(poke_name)
     if poke_info:
-        height_val["text"] = poke_info["height"]
-        weight_val["text"] = poke_info["weight"]
+        height_val["text"] = (f"{poke_info["height"]} dm") 
+        weight_val["text"] = (f"{poke_info["weight"]} hg")
         # update types_val
         types = []
         for _ in poke_info["types"]:
